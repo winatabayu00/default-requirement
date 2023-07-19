@@ -21,6 +21,6 @@ class BaseServiceProvider
      */
     public function boot()
     {
-        $this->publishes([__DIR__.'/../stubs/ResponseCode.stub' => app_path('Enums/ResponseCode.php')]);
+        copy(from: __DIR__.'/../stubs/ResponseCode.stub', to: app_path('Enums/ResponseCode.php'));
     }
 }
