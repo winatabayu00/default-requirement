@@ -15,6 +15,7 @@
         "ext-intl": "*",
         "ext-json": "*",
         "dentro/yalr": "^1.2",
+        "archtechx/enums": "^0.3.2",
         "veelasky/laravel-hashid": "^3.1.2",
         "koffinate/laravel-core": "^3.3",
         "koffinate/laravel-menu": "^1.2",
