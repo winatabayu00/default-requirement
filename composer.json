@@ -42,7 +42,7 @@
             "Winata\\Core\\": "src/"
         }, "files": [
             "helpers.php",
-            "stubs/ResponseCode.stub"
+            "stubs/ResponseCode.php"
         ]
     },
     "extra": {
