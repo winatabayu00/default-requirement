@@ -48,7 +48,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Winata\\Core\\CoreServiceProvider"
+                "Winata\\Core\\BaseServiceProvider"
             ],
             "aliases": {}
         }
