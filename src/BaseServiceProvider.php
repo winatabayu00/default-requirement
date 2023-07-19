@@ -2,7 +2,9 @@
 
 namespace Winata\Core;
 
-class BaseServiceProvider
+use Illuminate\Support\ServiceProvider;
+
+class BaseServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
