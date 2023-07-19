@@ -166,62 +166,17 @@ if (! function_exists('routed')) {
     }
 }
 
-if (! function_exists('activeRoute')) {
+if (! function_exists('shareGlobalParams')) {
     /**
-     * @param string $route
-     * @param array  $params
+     * Existing Route by Name
+     * with '#' fallback.
      *
-     * @return bool
+     * @param string $argument
+     * @param mixed $value
+     * @return void
      */
-    function activeRoute(string $route = '', array $params = []): bool
+    function shareGlobalParams(string $argument, mixed $value): void
     {
-        if (empty($route = trim($route))) {
-            return false;
-        }
-
-        try {
-            if (request()->routeIs($route, "{$route}.*")) {
-                if (empty($params)) {
-                    return true;
-                }
-
-                $requestRoute = request()->route();
-                $paramNames = $requestRoute->parameterNames();
-
-                foreach ($params as $key => $value) {
-                    if (is_int($key)) {
-                        $key = $paramNames[$key];
-                    }
-
-                    if (
-                        $requestRoute->parameter($key) instanceof \Illuminate\Database\Eloquent\Model
-                        && $value instanceof \Illuminate\Database\Eloquent\Model
-                        && $requestRoute->parameter($key)->id != $value->id
-                    ) {
-                        return false;
-                    }
-
-                    if (is_object($requestRoute->parameter($key))) {
-                        // try to check param is enum type
-                        try {
-                            if ($requestRoute->parameter($key)->value && $requestRoute->parameter($key)->value != $value) {
-                                return false;
-                            }
-                        } catch (Exception $e) {
-                            return false;
-                        }
-                    } else {
-                        if ($requestRoute->parameter($key) != $value) {
-                            return false;
-                        }
-                    }
-                }
-
-                return true;
-            }
-        } catch (Exception $e) {
-        }
-
-        return false;
+        \view()->share($argument, $value);
     }
 }
