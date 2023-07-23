@@ -1,6 +1,6 @@
 <?php
 
-namespace Winata\Core\Controller\Api;
+namespace Winata\Core\Controllers\Api;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;

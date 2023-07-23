@@ -1,6 +1,6 @@
 <?php
 
-namespace Winata\Core\Model;
+namespace Winata\Core\Models;
 use Koffin\Core\Database\Eloquent\Model as BaseModel;
 use Koffin\Core\Database\Eloquent\SoftDeletes;
 use Koffin\Core\Foundation\Auth\User;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Winata\Core\Controller;
+namespace Winata\Core\Controllers;
 
 use Koffin\Core\Routing\Controller as BaseController;
 
